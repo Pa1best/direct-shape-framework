@@ -7,35 +7,19 @@ namespace DirectShapeFramework.Demo.Commands;
 
 [UsedImplicitly]
 [Transaction(TransactionMode.Manual)]
-public class HighlightVectorCommand : IExternalCommand
+public class ClearAllCommand : IExternalCommand
 {
     public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
     {
         var uiDocument = commandData.Application.ActiveUIDocument;
         var document = uiDocument.Document;
 
-        var instances = SelectPointBasedFamilyInstances(uiDocument);
-        if (instances==null)
-        {
-            MessageBox.Show("Select Family Instance(s)");
-            return Result.Failed;
-        }
+        using var t = new Transaction(document, "DSF_ClearAll");
+        t.Start();
 
-        using (var t = new Transaction(document, "DSF_Highlight Vector"))
-        {
-            t.Start();
+        Highlight.ClearAll(document);
 
-            foreach (var instance in instances)
-            {
-                //Use this method inside transaction
-                Highlight.Vector(document, instance.Instance.FacingOrientation,instance.LocationPoint.Point);
-            }
-
-            t.Commit();
-        }
-
-        //Use this method outside transaction
-        Highlight.OnView3D(uiDocument);
+        t.Commit();
 
         return Result.Succeeded;
     }

@@ -26,4 +26,13 @@
 		<VendorId>PalbestGit</VendorId>
 		<VendorDescription>https://github.com/PalbestGit</VendorDescription>
 	</AddIn>
+	<AddIn Type="Command">
+		<Name>DirectShapeFramework.Demo</Name>
+		<Assembly>DirectShapeFramework/DirectShapeFramework.Demo.dll</Assembly>
+		<AddInId>43EBEEB8-B762-440D-8738-84CB65C80B2C</AddInId>
+		<FullClassName>DirectShapeFramework.Demo.Commands.ClearAllCommand</FullClassName>
+		<Text>DirectShapeFramework.Demo.ClearAll</Text>
+		<VendorId>PalbestGit</VendorId>
+		<VendorDescription>https://github.com/PalbestGit</VendorDescription>
+	</AddIn>
 </RevitAddIns>

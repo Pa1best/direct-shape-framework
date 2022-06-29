@@ -190,7 +190,15 @@ public static class Highlight
     public static void ClearAll(Document doc)
     {
         doc.Delete(new FilteredElementCollector(doc).OfClass(typeof(DirectShape)).ToElementIds());
-        doc.Delete(_defaultView?.Id);
+        if (_defaultView is {IsValidObject: true})
+        {
+            if (doc.ActiveView.Id == _defaultView.Id)
+            {
+                MessageBox.Show("This view can't be deleted while it is opened. Please open another view and try again");
+                return;
+            }
+            doc.Delete(_defaultView.Id);
+        }
     }
 
     /// <summary>
@@ -206,7 +214,7 @@ public static class Highlight
             var existingView = ViewUtils.GetView3DByName(doc, _defaultViewName);
             if (existingView == null)
             {
-                using var t = new Transaction(uiDoc.Document, "DSF_GenerateView");
+                using var t = new Transaction(uiDoc.Document, "DSF_Generate View");
                 t.Start();
 
                 _defaultView = ViewUtils.GenerateDsfView(uiDoc.Document,_defaultViewName);

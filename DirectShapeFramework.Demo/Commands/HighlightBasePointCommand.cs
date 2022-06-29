@@ -21,7 +21,7 @@ public class HighlightBasePointCommand : IExternalCommand
             return Result.Failed;
         }
 
-        using (var t = new Transaction(document, "DSF_HighlightBasePoint"))
+        using (var t = new Transaction(document, "DSF_Highlight Base Point"))
         {
             t.Start();
 

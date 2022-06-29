@@ -21,7 +21,7 @@ public class HighlightBoundingBoxCommand : IExternalCommand
             return Result.Failed;
         }
 
-        using (var t = new Transaction(document, "DSF_HighlightBbox"))
+        using (var t = new Transaction(document, "DSF_Highlight Bbox"))
         {
             t.Start();
 
