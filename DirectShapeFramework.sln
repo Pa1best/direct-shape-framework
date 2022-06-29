@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectShapeFramework", "DirectShapeFramework\DirectShapeFramework.csproj", "{591BC857-7A28-4D38-86D9-DF55432A2F86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectShapeFramework.Demo", "DirectShapeFramework.Demo\DirectShapeFramework.Demo.csproj", "{CFC3913E-D622-4999-9505-8222B2EE5712}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectShapeFramework.Demo", "DirectShapeFramework.Demo\DirectShapeFramework.Demo.csproj", "{CFC3913E-D622-4999-9505-8222B2EE5712}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,7 +58,6 @@ Global
 		{CFC3913E-D622-4999-9505-8222B2EE5712}.Debug R23|Any CPU.ActiveCfg = Debug R23|Any CPU
 		{CFC3913E-D622-4999-9505-8222B2EE5712}.Debug R23|Any CPU.Build.0 = Debug R23|Any CPU
 		{CFC3913E-D622-4999-9505-8222B2EE5712}.Debug|Any CPU.ActiveCfg = Debug R19|Any CPU
-		{CFC3913E-D622-4999-9505-8222B2EE5712}.Debug|Any CPU.Build.0 = Debug R19|Any CPU
 		{CFC3913E-D622-4999-9505-8222B2EE5712}.Release R19|Any CPU.ActiveCfg = Release R19|Any CPU
 		{CFC3913E-D622-4999-9505-8222B2EE5712}.Release R19|Any CPU.Build.0 = Release R19|Any CPU
 		{CFC3913E-D622-4999-9505-8222B2EE5712}.Release R20|Any CPU.ActiveCfg = Release R20|Any CPU
@@ -70,7 +69,6 @@ Global
 		{CFC3913E-D622-4999-9505-8222B2EE5712}.Release R23|Any CPU.ActiveCfg = Release R23|Any CPU
 		{CFC3913E-D622-4999-9505-8222B2EE5712}.Release R23|Any CPU.Build.0 = Release R23|Any CPU
 		{CFC3913E-D622-4999-9505-8222B2EE5712}.Release|Any CPU.ActiveCfg = Release R19|Any CPU
-		{CFC3913E-D622-4999-9505-8222B2EE5712}.Release|Any CPU.Build.0 = Release R19|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
