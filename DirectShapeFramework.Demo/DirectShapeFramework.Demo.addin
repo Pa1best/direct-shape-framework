@@ -1,0 +1,29 @@
+﻿<RevitAddIns>
+	<AddIn Type="Command">
+		<Name>DirectShapeFramework.Demo</Name>
+		<Assembly>DirectShapeFramework/DirectShapeFramework.Demo.dll</Assembly>
+		<AddInId>F23406A7-EB8D-42BB-993D-6A8F1016D6C5</AddInId>
+		<FullClassName>DirectShapeFramework.Demo.Commands.HighlightBoundingBoxCommand</FullClassName>
+		<Text>DirectShapeFramework.Demo.HighlightBoundingBoxCommand</Text>
+		<VendorId>PalbestGit</VendorId>
+		<VendorDescription>https://github.com/PalbestGit</VendorDescription>
+	</AddIn>
+	<AddIn Type="Command">
+		<Name>DirectShapeFramework.Demo</Name>
+		<Assembly>DirectShapeFramework/DirectShapeFramework.Demo.dll</Assembly>
+		<AddInId>032B35E8-ACC6-41DC-957C-2F3C4B40C595</AddInId>
+		<FullClassName>DirectShapeFramework.Demo.Commands.HighlightBasePointCommand</FullClassName>
+		<Text>DirectShapeFramework.Demo.HighlightBasePointCommand</Text>
+		<VendorId>PalbestGit</VendorId>
+		<VendorDescription>https://github.com/PalbestGit</VendorDescription>
+	</AddIn>
+	<AddIn Type="Command">
+		<Name>DirectShapeFramework.Demo</Name>
+		<Assembly>DirectShapeFramework/DirectShapeFramework.Demo.dll</Assembly>
+		<AddInId>6F5FC772-C68C-47E3-8342-558C04CE4247</AddInId>
+		<FullClassName>DirectShapeFramework.Demo.Commands.HighlightVectorCommand</FullClassName>
+		<Text>DirectShapeFramework.Demo.HighlightVectorCommand</Text>
+		<VendorId>PalbestGit</VendorId>
+		<VendorDescription>https://github.com/PalbestGit</VendorDescription>
+	</AddIn>
+</RevitAddIns>
