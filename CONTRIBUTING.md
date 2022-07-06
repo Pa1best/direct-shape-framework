@@ -15,7 +15,7 @@ The following is a set of guidelines for contributing to this repository. These 
   
 ## How Can I Contribute?
 
-### Reporting Bugs
+### :bug: Reporting Bugs
 This section guides you through submitting a bug report for DirectShapeFramework. Following these guidelines helps maintainers and the community understand your report :pencil:, reproduce the behavior :hammer::hammer:, and find related reports :mag_right:
 
 We are using [GitHub Issues](https://guides.github.com/features/issues/) for creating Bug reports.
@@ -37,14 +37,14 @@ Explain the problem and include additional details to help maintainers reproduce
 * **Include screenshots or animated GIFs** which show you following the described steps and clearly demonstrate the problem.
 * **If possible, attach the Revit project in which the bug occurred**
 
-### Suggesting Enhancements
+### :bulb: Suggesting Enhancements
 
 We are using [GitHub Issues](https://guides.github.com/features/issues/) for Suggesting Enhancements.
 Before creating a new Issue, please check [existing Issues](https://github.com/PalbestGit/oss-enterprise/issues). If somebody already suggested similar idea support it by adding a comment with :+1: or explain why it should be added ASAP.
 
 > **Use [Add] prefix** in the Issue Title to help others identify this Issue as Suggesting Enhancements
 
-### Submitting A Pull Request
+### :computer: Submitting A Pull Request
 
 #### Algorythm Of Proposing By Pull Request:
 1. [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) and [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) the repository (Only for the first time)
