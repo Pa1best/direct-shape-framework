@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2022 Alex Slutski (https://www.linkedin.com/in/alexei-slutski-261586183/)
+Copyright (c) 2022 Alex Slutski (https://www.linkedin.com/in/alexei-slutski-261586183/) and [Contributors](CONTRIBUTORS.md)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
