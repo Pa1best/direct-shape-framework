@@ -40,6 +40,7 @@ Explain the problem and include additional details to help maintainers reproduce
 
 We are using [GitHub Issues](https://guides.github.com/features/issues/) for Suggesting Enhancements.
 Before creating a new Issue, please check [existing Issues](https://github.com/PalbestGit/oss-enterprise/issues). If somebody already suggested similar idea support it by adding a comment with :+1: or add your opinion why it should be usefull.
+
 Or [create a new Issue](https://github.com/electron/electron/issues/new) and press Get started in Feature request section.
 
 ### :computer: Submitting A Pull Request
