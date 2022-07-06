@@ -3,6 +3,7 @@
 
 The following is a set of guidelines for contributing to this repository. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
+> **Important:** Communication in this project is moderated according to [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md)
 
 ## Table Of Contents
 
