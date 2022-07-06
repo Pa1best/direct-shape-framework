@@ -1,8 +1,8 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-title: ''
-labels: enhancement
+title: "[Bug] Title"
+labels: bug
 assignees: Pa1best
 
 ---
@@ -21,18 +21,14 @@ Steps to reproduce the behavior:
 A clear and concise description of what you expected to happen.
 
 **Screenshots**
-If applicable, add screenshots to help explain your problem.
+If applicable, add screenshots or gif animation to help explain your problem.
+[How to add Image](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/attaching-files)
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+**Revit version:**
+Write Revit version in which the bug happened
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+**.Net Framework version of your plugin:**
+Write .Net Framework version you are using for your plugin
 
 **Additional context**
 Add any other context about the problem here.
