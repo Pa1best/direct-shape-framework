@@ -1,5 +1,5 @@
 # Contributing
-:+1::tada: First off, thanks for taking the time to contribute! :sunglasses::milky_way:
+:+1::tada: First off, thanks for taking the time to contribute! Together we will help Revit API community to work better :sunglasses::milky_way:
 
 The following is a set of guidelines for contributing to this repository. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
