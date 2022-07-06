@@ -24,13 +24,11 @@ Before creating a new Issue, please check [Opened Issues](https://github.com/Pal
 
 > **Note:** If you find a **Closed** issue that seems like it is the same thing that you're experiencing, open a new issue and include a link to the original issue in the body of your new one.
 
-If you have found a new bug, [create a new Issue](https://github.com/electron/electron/issues/new).
+If you have found a new bug, [create a new Issue](https://github.com/electron/electron/issues/new) and press Get started in Bug report section.
 
 #### How To Submit A (Good) Bug Report?
 
 Explain the problem and include additional details to help maintainers reproduce the problem:
-
-> **Use [Bug] prefix** in the Issue Title to help others identify this Issue as a Bug
 
 * **Create a single Issue for single bug** Do not enumerate multiple bugs or feature requests in the same issue.
 * **Use a clear and descriptive title** for the issue to identify the problem.
@@ -41,9 +39,8 @@ Explain the problem and include additional details to help maintainers reproduce
 ### :bulb: Suggesting Enhancements
 
 We are using [GitHub Issues](https://guides.github.com/features/issues/) for Suggesting Enhancements.
-Before creating a new Issue, please check [existing Issues](https://github.com/PalbestGit/oss-enterprise/issues). If somebody already suggested similar idea support it by adding a comment with :+1: or explain why it should be added ASAP.
-
-> **Use [Add] prefix** in the Issue Title to help others identify this Issue as Suggesting Enhancements
+Before creating a new Issue, please check [existing Issues](https://github.com/PalbestGit/oss-enterprise/issues). If somebody already suggested similar idea support it by adding a comment with :+1: or add your opinion why it should be usefull.
+Or [create a new Issue](https://github.com/electron/electron/issues/new) and press Get started in Feature request section.
 
 ### :computer: Submitting A Pull Request
 
