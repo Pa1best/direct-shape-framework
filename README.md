@@ -10,7 +10,7 @@ Click :point_up_2: on the image below :beginner: to watch a small gif demo of vi
 
 ## Installation
 
-For now you can download or copy local this project and build in release mode DirectShapeFramework library. Later I will set up this library as a .nuget package.
+Install as .nuget package and enjoi :star:
 
 ## Features
 
