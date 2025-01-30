@@ -21,6 +21,8 @@ Global
 		Release R22|Any CPU = Release R22|Any CPU
 		Release R23|Any CPU = Release R23|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Debug R24|Any CPU = Debug R24|Any CPU
+		Release R24|Any CPU = Release R24|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{591BC857-7A28-4D38-86D9-DF55432A2F86}.Debug R19|Any CPU.ActiveCfg = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{591BC857-7A28-4D38-86D9-DF55432A2F86}.Release R23|Any CPU.Build.0 = Release|Any CPU
 		{591BC857-7A28-4D38-86D9-DF55432A2F86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{591BC857-7A28-4D38-86D9-DF55432A2F86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{591BC857-7A28-4D38-86D9-DF55432A2F86}.Debug R24|Any CPU.ActiveCfg = Debug|Any CPU
+		{591BC857-7A28-4D38-86D9-DF55432A2F86}.Release R24|Any CPU.ActiveCfg = Release|Any CPU
+		{591BC857-7A28-4D38-86D9-DF55432A2F86}.Debug R24|Any CPU.Build.0 = Debug|Any CPU
+		{591BC857-7A28-4D38-86D9-DF55432A2F86}.Release R24|Any CPU.Build.0 = Release|Any CPU
 		{CFC3913E-D622-4999-9505-8222B2EE5712}.Debug R19|Any CPU.ActiveCfg = Debug R19|Any CPU
 		{CFC3913E-D622-4999-9505-8222B2EE5712}.Debug R19|Any CPU.Build.0 = Debug R19|Any CPU
 		{CFC3913E-D622-4999-9505-8222B2EE5712}.Debug R20|Any CPU.ActiveCfg = Debug R20|Any CPU
@@ -69,6 +75,10 @@ Global
 		{CFC3913E-D622-4999-9505-8222B2EE5712}.Release R23|Any CPU.ActiveCfg = Release R23|Any CPU
 		{CFC3913E-D622-4999-9505-8222B2EE5712}.Release R23|Any CPU.Build.0 = Release R23|Any CPU
 		{CFC3913E-D622-4999-9505-8222B2EE5712}.Release|Any CPU.ActiveCfg = Release R19|Any CPU
+		{CFC3913E-D622-4999-9505-8222B2EE5712}.Debug R24|Any CPU.ActiveCfg = Debug R24|Any CPU
+		{CFC3913E-D622-4999-9505-8222B2EE5712}.Debug R24|Any CPU.Build.0 = Debug R24|Any CPU
+		{CFC3913E-D622-4999-9505-8222B2EE5712}.Release R24|Any CPU.ActiveCfg = Release R24|Any CPU
+		{CFC3913E-D622-4999-9505-8222B2EE5712}.Release R24|Any CPU.Build.0 = Release R24|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

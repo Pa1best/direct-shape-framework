@@ -95,14 +95,9 @@ internal static class GeometryUtils
         return null;
     }
 
-    internal static IList<GeometryObject> GetGeometryFromFace(Face face, Element element)
+    internal static IList<GeometryObject> GetGeometryFromFace(Face face)
     {
         var mesh = face.Triangulate();
-        if (element is FamilyInstance familyInstance)
-        {
-            var t = familyInstance.GetTotalTransform();
-            mesh = mesh.get_Transformed(t);
-        }
 
         var builder = new TessellatedShapeBuilder();
         builder.OpenConnectedFaceSet(false);
@@ -127,5 +122,41 @@ internal static class GeometryUtils
         builder.Build();
         var result = builder.GetBuildResult();
         return result.GetGeometricalObjects();
+    }
+    
+     /// <summary>
+    /// Creates a thin solid to represent a plane in Revit.
+    /// </summary>
+    /// <param name="plane">The plane on which the solid will be created.</param>
+    /// <param name="width">The width of the solid.</param>
+    /// <param name="height">The height of the solid.</param>
+    /// <param name="thickness">The thickness of the solid (extrusion depth).</param>
+    /// <returns>A Solid representing the plane.</returns>
+    internal static Solid CreatePlaneSolid(Plane plane, double width, double height, double thickness)
+    {
+        // Define the four corner points of the rectangle in 2D (plane's local coordinate system)
+        XYZ point1 = new XYZ(-width / 2, -height / 2, 0); // Bottom-left
+        XYZ point2 = new XYZ(width / 2, -height / 2, 0);  // Bottom-right
+        XYZ point3 = new XYZ(width / 2, height / 2, 0);   // Top-right
+        XYZ point4 = new XYZ(-width / 2, height / 2, 0);  // Top-left
+
+        // Create a profile using the defined points
+        CurveLoop profile = new CurveLoop();
+        profile.Append(Line.CreateBound(point1, point2)); // Bottom edge
+        profile.Append(Line.CreateBound(point2, point3)); // Right edge
+        profile.Append(Line.CreateBound(point3, point4)); // Top edge
+        profile.Append(Line.CreateBound(point4, point1)); // Left edge
+
+        // Extrude the profile to create the solid
+        XYZ extrusionDirection = plane.Normal.Normalize(); // Extrusion direction is along the plane's normal
+        Solid planeSolid = GeometryCreationUtilities.CreateExtrusionGeometry(
+            new List<CurveLoop> { profile }, extrusionDirection, thickness);
+
+        // Transform the solid to the plane's location and orientation
+        Transform transform = Transform.CreateTranslation(plane.Origin - XYZ.Zero)
+                              * Transform.CreateRotation(XYZ.BasisZ, plane.Normal.AngleTo(XYZ.BasisZ));
+        Solid transformedSolid = SolidUtils.CreateTransformed(planeSolid, transform);
+
+        return transformedSolid;
     }
 }

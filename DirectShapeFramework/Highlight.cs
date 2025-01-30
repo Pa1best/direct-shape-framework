@@ -98,9 +98,38 @@ public static class Highlight
     /// <param name="face">Face of host element to highlight</param>
     /// <returns>DirectShape object</returns>
     [UsedImplicitly]
+    [Obsolete]
     public static DirectShape Face(Document doc, Element element, Face face)
     {
-        var g = GeometryUtils.GetGeometryFromFace(face, element);
+        var g = GeometryUtils.GetGeometryFromFace(face);
+        return Geometry(doc, g);
+    }
+    
+    /// <summary>
+    /// Helps to highlight element's Face
+    /// </summary>
+    /// <param name="doc">Revit Document you are working on</param>
+    /// <param name="face">Face of host element to highlight</param>
+    /// <returns>DirectShape object</returns>
+    [UsedImplicitly]
+    public static DirectShape Face(Document doc, Face face)
+    {
+        var g = GeometryUtils.GetGeometryFromFace(face);
+        return Geometry(doc, g);
+    }
+
+    /// <summary>
+    /// Helps to highlight Plane
+    /// </summary>
+    /// <param name="doc">Revit Document you are working on</param>
+    /// <param name="plane">Plane to highlight</param>
+    /// <param name="width">represents width of generated geometry</param>
+    /// <param name="height">represents height of generated geometry</param>
+    /// <returns>DirectShape object</returns>
+    [UsedImplicitly]
+    public static DirectShape Plane(Document doc, Plane plane, double width = 10, double height = 10)
+    {
+        var g = GeometryUtils.CreatePlaneSolid(plane, width, height, 0.1);
         return Geometry(doc, g);
     }
 

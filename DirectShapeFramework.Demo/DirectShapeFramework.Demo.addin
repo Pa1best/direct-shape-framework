@@ -35,4 +35,22 @@
 		<VendorId>PalbestGit</VendorId>
 		<VendorDescription>https://github.com/PalbestGit</VendorDescription>
 	</AddIn>
+	<AddIn Type="Command">
+    		<Name>DirectShapeFramework.HighlightBiggestFace</Name>
+    		<Assembly>DirectShapeFramework/DirectShapeFramework.Demo.dll</Assembly>
+    		<AddInId>43EBEEB8-B762-440D-8738-84CB65C80B2B</AddInId>
+    		<FullClassName>DirectShapeFramework.Demo.Commands.HighlightBiggestFaceCommand</FullClassName>
+    		<Text>DirectShapeFramework.Demo.HighlightBiggestFace</Text>
+    		<VendorId>PalbestGit</VendorId>
+    		<VendorDescription>https://github.com/PalbestGit</VendorDescription>
+    </AddIn>
+    <AddIn Type="Command">
+        		<Name>DirectShapeFramework.HighlightLevelPlane</Name>
+        		<Assembly>DirectShapeFramework/DirectShapeFramework.Demo.dll</Assembly>
+        		<AddInId>43EBEEB8-B762-440D-8738-84CB65C80B4B</AddInId>
+        		<FullClassName>DirectShapeFramework.Demo.Commands.HighlightLevelPlaneCommand</FullClassName>
+        		<Text>DirectShapeFramework.Demo.HighlightLevelPlane</Text>
+        		<VendorId>PalbestGit</VendorId>
+        		<VendorDescription>https://github.com/PalbestGit</VendorDescription>
+        	</AddIn>	
 </RevitAddIns>
