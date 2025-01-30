@@ -20,6 +20,7 @@ Install as .nuget package and enjoi :star:
 - [Highlight Face](#highlight-face)
 - [Highlight Curve](#highlight-curve)
 - [Highlight BoundingBox](#highlight-boundingbox)
+- [(Highlight Plane)(#highlight-plane)]
 
 
 ### Highlight Geometry
@@ -67,7 +68,7 @@ var wallFaces = HostObjectUtils.GetSideFaces(wall, ShellLayerType.Exterior);
 var geometryObject = wall.GetGeometryObjectFromReference(wallFaces.First());
 if (geometryObject is Face face)
    //Use this method inside transaction
-   Highlight.Face(document, wall, face);
+   Highlight.Face(document, face);
 ```
 
 ### Highlight Curve
@@ -89,6 +90,20 @@ Creates rectangular DirectShape element to visualise element's BoundingBox.
 ```c#
 //Use this method inside transaction
 Highlight.BoundingBox(document, instance.get_BoundingBox(null));
+```
+
+### Highlight Plane
+Creates geometry to visualise Revit API Plane element
+
+```c#
+//Use this method inside transaction
+var elevation = level.Elevation;
+// Create a horizontal plane in the XY direction
+var origin = new XYZ(0, 0, elevation); // Origin at the level's elevation
+var normal = XYZ.BasisZ; // Normal in the Z direction
+
+var levelPlane = Plane.CreateByNormalAndOrigin(normal, origin);
+Highlight.Plane(document, levelPlane, 100, 100);
 ```
 
 ## Supported Revit versions
