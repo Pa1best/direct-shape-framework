@@ -24,11 +24,15 @@ public class ClearAllCommand : IExternalCommand
         return Result.Succeeded;
     }
 
-    private List<(FamilyInstance Instance, LocationPoint LocationPoint)> SelectPointBasedFamilyInstances(UIDocument uiDoc)
+    private List<(FamilyInstance Instance, LocationPoint LocationPoint)> SelectPointBasedFamilyInstances(
+        UIDocument uiDoc)
     {
         var collection = new List<(FamilyInstance, LocationPoint)>();
         foreach (var elementId in uiDoc.Selection.GetElementIds())
-            if (uiDoc.Document.GetElement(elementId) is FamilyInstance { Location: LocationPoint locationPoint } instance)
+            if (uiDoc.Document.GetElement(elementId) is FamilyInstance
+                {
+                    Location: LocationPoint locationPoint
+                } instance)
                 collection.Add((instance, locationPoint));
         return collection;
     }

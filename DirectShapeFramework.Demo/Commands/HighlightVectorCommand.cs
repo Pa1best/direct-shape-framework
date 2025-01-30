@@ -15,7 +15,7 @@ public class HighlightVectorCommand : IExternalCommand
         var document = uiDocument.Document;
 
         var instances = SelectPointBasedFamilyInstances(uiDocument);
-        if (instances==null)
+        if (instances == null)
         {
             MessageBox.Show("Select Family Instance(s)");
             return Result.Failed;
@@ -28,7 +28,7 @@ public class HighlightVectorCommand : IExternalCommand
             foreach (var instance in instances)
             {
                 //Use this method inside transaction
-                Highlight.Vector(document, instance.Instance.FacingOrientation,instance.LocationPoint.Point);
+                Highlight.Vector(document, instance.Instance.FacingOrientation, instance.LocationPoint.Point);
             }
 
             t.Commit();
@@ -40,11 +40,15 @@ public class HighlightVectorCommand : IExternalCommand
         return Result.Succeeded;
     }
 
-    private List<(FamilyInstance Instance, LocationPoint LocationPoint)> SelectPointBasedFamilyInstances(UIDocument uiDoc)
+    private List<(FamilyInstance Instance, LocationPoint LocationPoint)> SelectPointBasedFamilyInstances(
+        UIDocument uiDoc)
     {
         var collection = new List<(FamilyInstance, LocationPoint)>();
         foreach (var elementId in uiDoc.Selection.GetElementIds())
-            if (uiDoc.Document.GetElement(elementId) is FamilyInstance { Location: LocationPoint locationPoint } instance)
+            if (uiDoc.Document.GetElement(elementId) is FamilyInstance
+                {
+                    Location: LocationPoint locationPoint
+                } instance)
                 collection.Add((instance, locationPoint));
         return collection;
     }

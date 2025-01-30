@@ -15,7 +15,7 @@ public class HighlightLevelPlaneCommand : IExternalCommand
         var document = uiDocument.Document;
 
         var levels = SelectLevels(uiDocument);
-        if (levels==null)
+        if (levels == null)
         {
             MessageBox.Show("Select Family Instance(s)");
             return Result.Failed;
@@ -30,18 +30,17 @@ public class HighlightLevelPlaneCommand : IExternalCommand
             var elevation = level.Elevation;
 
             // Create a horizontal plane in the XY direction
-            var origin = new XYZ(0, 0, elevation);    // Origin at the level's elevation
-            var normal = XYZ.BasisZ;                 // Normal in the Z direction
+            var origin = new XYZ(0, 0, elevation); // Origin at the level's elevation
+            var normal = XYZ.BasisZ; // Normal in the Z direction
 
             var levelPlane = Plane.CreateByNormalAndOrigin(normal, origin);
-            Highlight.Plane(document,levelPlane, 100,100);
-            
-            
+            Highlight.Plane(document, levelPlane, 100, 100);
         }
+
         uiDocument.Selection.SetElementIds(sdfIds);
-        
+
         t.Commit();
-        
+
         return Result.Succeeded;
     }
 

@@ -15,7 +15,7 @@ public class HighlightBiggestFaceCommand : IExternalCommand
         var document = uiDocument.Document;
 
         var instances = SelectFamilyInstances(uiDocument);
-        if (instances==null)
+        if (instances == null)
         {
             MessageBox.Show("Select Family Instance(s)");
             return Result.Failed;
@@ -24,8 +24,8 @@ public class HighlightBiggestFaceCommand : IExternalCommand
         using var t = new Transaction(document, "DSF_Highlight Face");
         t.Start();
 
-        var sdfIds = new List<ElementId>();   
-        
+        var sdfIds = new List<ElementId>();
+
         foreach (var instance in instances)
         {
             var geometryInstance = instance.get_Geometry(new Options()).OfType<GeometryInstance>().FirstOrDefault();
@@ -47,11 +47,10 @@ public class HighlightBiggestFaceCommand : IExternalCommand
             //Use this method inside transaction
             var dsf = Highlight.Face(document, biggestFace);
             sdfIds.Add(dsf.Id);
-            
         }
 
         uiDocument.Selection.SetElementIds(sdfIds);
-        
+
         t.Commit();
 
         //Use this method outside transaction

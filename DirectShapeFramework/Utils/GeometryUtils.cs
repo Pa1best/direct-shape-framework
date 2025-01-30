@@ -33,7 +33,7 @@ internal static class GeometryUtils
 
         var baseLoop = CurveLoop.Create(edges);
 
-        var loopList = new List<CurveLoop> {baseLoop};
+        var loopList = new List<CurveLoop> { baseLoop };
 
         var preTransformBox = GeometryCreationUtilities
             .CreateExtrusionGeometry(loopList, XYZ.BasisZ,
@@ -90,7 +90,9 @@ internal static class GeometryUtils
         var options = new SolidOptions(ElementId.InvalidElementId, ElementId.InvalidElementId);
 
         var frame = new Frame(center, XYZ.BasisX, -XYZ.BasisZ, XYZ.BasisY);
-        if (Frame.CanDefineRevitGeometry(frame)) return GeometryCreationUtilities.CreateRevolvedGeometry(frame, new[] {curveLoop}, 0, 2 * Math.PI, options);
+        if (Frame.CanDefineRevitGeometry(frame))
+            return GeometryCreationUtilities.CreateRevolvedGeometry(frame, new[] { curveLoop }, 0, 2 * Math.PI,
+                options);
         MessageBox.Show("Can't create Sphere with this parameters", "DSF");
         return null;
     }
@@ -123,8 +125,8 @@ internal static class GeometryUtils
         var result = builder.GetBuildResult();
         return result.GetGeometricalObjects();
     }
-    
-     /// <summary>
+
+    /// <summary>
     /// Creates a thin solid to represent a plane in Revit.
     /// </summary>
     /// <param name="plane">The plane on which the solid will be created.</param>
@@ -136,9 +138,9 @@ internal static class GeometryUtils
     {
         // Define the four corner points of the rectangle in 2D (plane's local coordinate system)
         XYZ point1 = new XYZ(-width / 2, -height / 2, 0); // Bottom-left
-        XYZ point2 = new XYZ(width / 2, -height / 2, 0);  // Bottom-right
-        XYZ point3 = new XYZ(width / 2, height / 2, 0);   // Top-right
-        XYZ point4 = new XYZ(-width / 2, height / 2, 0);  // Top-left
+        XYZ point2 = new XYZ(width / 2, -height / 2, 0); // Bottom-right
+        XYZ point3 = new XYZ(width / 2, height / 2, 0); // Top-right
+        XYZ point4 = new XYZ(-width / 2, height / 2, 0); // Top-left
 
         // Create a profile using the defined points
         CurveLoop profile = new CurveLoop();

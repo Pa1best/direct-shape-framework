@@ -25,7 +25,7 @@ public static class Highlight
         //create direct shape and assign the sphere shape
         var ds = DirectShape.CreateElement(doc, new ElementId(BuiltInCategory.OST_GenericModel));
 
-        ds.SetShape(new[] {geometryObject});
+        ds.SetShape(new[] { geometryObject });
         ds.get_Parameter(BuiltInParameter.ALL_MODEL_MARK)?.Set(GenerateMark(doc));
         return ds;
     }
@@ -104,7 +104,7 @@ public static class Highlight
         var g = GeometryUtils.GetGeometryFromFace(face);
         return Geometry(doc, g);
     }
-    
+
     /// <summary>
     /// Helps to highlight element's Face
     /// </summary>
@@ -143,8 +143,8 @@ public static class Highlight
     [UsedImplicitly]
     public static List<DirectShape> Vector(Document doc, XYZ vector, XYZ start)
     {
-        var curve = Line.CreateBound(start, start + vector*2);
-        var curveShapes= CurveByPoints(doc, curve);
+        var curve = Line.CreateBound(start, start + vector * 2);
+        var curveShapes = CurveByPoints(doc, curve);
         curveShapes.Add(Point(doc, start));
         return curveShapes;
     }
@@ -219,13 +219,15 @@ public static class Highlight
     public static void ClearAll(Document doc)
     {
         doc.Delete(new FilteredElementCollector(doc).OfClass(typeof(DirectShape)).ToElementIds());
-        if (_defaultView is {IsValidObject: true})
+        if (_defaultView is { IsValidObject: true })
         {
             if (doc.ActiveView.Id == _defaultView.Id)
             {
-                MessageBox.Show("This view can't be deleted while it is opened. Please open another view and try again");
+                MessageBox.Show(
+                    "This view can't be deleted while it is opened. Please open another view and try again");
                 return;
             }
+
             doc.Delete(_defaultView.Id);
         }
     }
@@ -237,7 +239,7 @@ public static class Highlight
     [UsedImplicitly]
     public static void OnView3D(UIDocument uiDoc)
     {
-        if (_defaultView is not {IsValidObject: true})
+        if (_defaultView is not { IsValidObject: true })
         {
             var doc = uiDoc.Document;
             var existingView = ViewUtils.GetView3DByName(doc, _defaultViewName);
@@ -246,12 +248,13 @@ public static class Highlight
                 using var t = new Transaction(uiDoc.Document, "DSF_Generate View");
                 t.Start();
 
-                _defaultView = ViewUtils.GenerateDsfView(uiDoc.Document,_defaultViewName);
+                _defaultView = ViewUtils.GenerateDsfView(uiDoc.Document, _defaultViewName);
                 ViewFilterUtils.AddDsfFilter(doc, _defaultView, _defaultMarkPrefix);
 
                 t.Commit();
             }
         }
+
         uiDoc.ActiveView = _defaultView;
     }
 
@@ -259,7 +262,8 @@ public static class Highlight
     private static string GenerateMark(Document doc)
     {
         var existingElements = new FilteredElementCollector(doc).OfClass(typeof(DirectShape)).ToElements();
-        var parameters = existingElements.Select(x => x.get_Parameter(BuiltInParameter.ALL_MODEL_MARK)?.AsString()).ToList();
+        var parameters = existingElements.Select(x => x.get_Parameter(BuiltInParameter.ALL_MODEL_MARK)?.AsString())
+            .ToList();
         var index = parameters.Count;
         string mark;
         do

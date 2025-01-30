@@ -1,34 +1,34 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<UseWPF>true</UseWPF>
-		<LangVersion>latest</LangVersion>
-		<PlatformTarget>x64</PlatformTarget>
-		<ImplicitUsings>true</ImplicitUsings>
-		<TargetFramework>net472</TargetFramework>
-		<Configurations>Debug</Configurations>
-		<Configurations>$(Configurations);Release</Configurations>
-		<AssemblyVersion>0.0.9.0</AssemblyVersion>
-		<FileVersion>0.0.9.0</FileVersion>
-	</PropertyGroup>
-	<PropertyGroup Condition="$(Configuration.Contains('Debug'))">
-		<DebugSymbols>true</DebugSymbols>
-		<DebugType>full</DebugType>
-		<DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
-	</PropertyGroup>
-	<PropertyGroup Condition="$(Configuration.Contains('Release'))">
-		<Optimize>true</Optimize>
-		<DebugType>none</DebugType>
-		<DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
-	</PropertyGroup>
+    <PropertyGroup>
+        <UseWPF>true</UseWPF>
+        <LangVersion>latest</LangVersion>
+        <PlatformTarget>x64</PlatformTarget>
+        <ImplicitUsings>true</ImplicitUsings>
+        <TargetFramework>net472</TargetFramework>
+        <Configurations>Debug</Configurations>
+        <Configurations>$(Configurations);Release</Configurations>
+        <AssemblyVersion>0.0.9.0</AssemblyVersion>
+        <FileVersion>0.0.9.0</FileVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition="$(Configuration.Contains('Debug'))">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition="$(Configuration.Contains('Release'))">
+        <Optimize>true</Optimize>
+        <DebugType>none</DebugType>
+        <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
+    </PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="JetBrains.Annotations" Version="2022.1.0" />
-		<PackageReference Include="Nice3point.Revit.Api.RevitAPI" Version="2019.*" Copy="False" />
-		<PackageReference Include="Nice3point.Revit.Api.RevitAPIUI" Version="2019.*" Copy="False" />
-	</ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="JetBrains.Annotations" Version="2022.1.0"/>
+        <PackageReference Include="Nice3point.Revit.Api.RevitAPI" Version="2019.*" Copy="False"/>
+        <PackageReference Include="Nice3point.Revit.Api.RevitAPIUI" Version="2019.*" Copy="False"/>
+    </ItemGroup>
 
-	<ItemGroup>
-		<Using Include="JetBrains.Annotations" />
-	</ItemGroup>
+    <ItemGroup>
+        <Using Include="JetBrains.Annotations"/>
+    </ItemGroup>
 
 </Project>

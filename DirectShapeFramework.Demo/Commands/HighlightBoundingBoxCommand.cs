@@ -15,7 +15,7 @@ public class HighlightBoundingBoxCommand : IExternalCommand
         var document = uiDocument.Document;
 
         var instances = SelectFamilyInstances(uiDocument);
-        if (instances==null)
+        if (instances == null)
         {
             MessageBox.Show("Select Family Instance(s)");
             return Result.Failed;
