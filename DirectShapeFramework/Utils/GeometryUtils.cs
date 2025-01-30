@@ -149,14 +149,19 @@ internal static class GeometryUtils
         profile.Append(Line.CreateBound(point3, point4)); // Top edge
         profile.Append(Line.CreateBound(point4, point1)); // Left edge
 
-        // Extrude the profile to create the solid
-        XYZ extrusionDirection = plane.Normal.Normalize(); // Extrusion direction is along the plane's normal
+        // Extrude the profile to create the solid in its local coordinate system
+        XYZ extrusionDirection = XYZ.BasisZ; // Local Z-axis extrusion
         Solid planeSolid = GeometryCreationUtilities.CreateExtrusionGeometry(
-            new List<CurveLoop> { profile }, extrusionDirection, thickness);
+	        new List<CurveLoop> { profile }, extrusionDirection, thickness);
 
-        // Transform the solid to the plane's location and orientation
-        Transform transform = Transform.CreateTranslation(plane.Origin - XYZ.Zero)
-                              * Transform.CreateRotation(XYZ.BasisZ, plane.Normal.AngleTo(XYZ.BasisZ));
+        // Create a transformation that aligns the local coordinate system to the plane.
+        Transform transform = Transform.Identity;
+        transform.Origin = plane.Origin;               // Set the origin of the transform to the plane's origin
+        transform.BasisX = plane.XVec.Normalize();     // Align the X-axis of the transform to the plane's X axis
+        transform.BasisY = plane.YVec.Normalize();     // Align the Y-axis of the transform to the plane's Y axis
+        transform.BasisZ = plane.Normal.Normalize();   // Align the Z-axis of the transform to the plane's normal
+
+        // Transform the solid to match the plane
         Solid transformedSolid = SolidUtils.CreateTransformed(planeSolid, transform);
 
         return transformedSolid;
