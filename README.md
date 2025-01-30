@@ -20,7 +20,7 @@ Install as .nuget package and enjoi :star:
 - [Highlight Face](#highlight-face)
 - [Highlight Curve](#highlight-curve)
 - [Highlight BoundingBox](#highlight-boundingbox)
-- [(Highlight Plane)(#highlight-plane)]
+- [Highlight Plane](#highlight-plane)
 
 
 ### Highlight Geometry
