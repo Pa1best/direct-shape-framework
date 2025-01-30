@@ -9,6 +9,24 @@
         <Configurations>$(Configurations);Release</Configurations>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <FileVersion>1.1.0.0</FileVersion>
+        <Version>1.1.0</Version>
+        <Authors>Alex Slutski</Authors>
+        <Copyright>MIT</Copyright>
+        <Description>Helps to visualise hidden Revit geometry</Description>
+        <RepositoryUrl>https://nuget.info/packages/DirectShapeFramework/1.0.0</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageTags>Revit;Direct Shape;Geometry;</PackageTags>
+        <PackageReleaseNotes># Release 1.1.0
+
+## 🚀 Features
+- ✨ New overload for `Highlight.Face()` method, eliminating the need for the Element parameter (old overload is now obsolete)
+- ✨ New feature to highlight Plane
+
+## 🛠️ Fixes
+- 🔧 Fix bugs in `Highlight.Face()` method</PackageReleaseNotes>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     </PropertyGroup>
     <PropertyGroup Condition="$(Configuration.Contains('Debug'))">
         <DebugSymbols>true</DebugSymbols>
@@ -20,15 +38,25 @@
         <DebugType>none</DebugType>
         <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
     </PropertyGroup>
-
     <ItemGroup>
-        <PackageReference Include="JetBrains.Annotations" Version="2022.1.0"/>
-        <PackageReference Include="Nice3point.Revit.Api.RevitAPI" Version="2019.*" Copy="False"/>
-        <PackageReference Include="Nice3point.Revit.Api.RevitAPIUI" Version="2019.*" Copy="False"/>
+      <None Include="..\LICENSE.md">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+      </None>
+      <None Include="..\README.md">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+      </None>
     </ItemGroup>
 
     <ItemGroup>
-        <Using Include="JetBrains.Annotations"/>
+        <PackageReference Include="JetBrains.Annotations" Version="2022.1.0" />
+        <PackageReference Include="Nice3point.Revit.Api.RevitAPI" Version="2019.*" Copy="False" />
+        <PackageReference Include="Nice3point.Revit.Api.RevitAPIUI" Version="2019.*" Copy="False" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Using Include="JetBrains.Annotations" />
     </ItemGroup>
 
 </Project>
