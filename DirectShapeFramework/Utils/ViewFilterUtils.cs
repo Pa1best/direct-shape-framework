@@ -36,7 +36,6 @@ internal class ViewFilterUtils
         };
     }
 
-    [CanBeNull]
     private static ParameterFilterElement FindFilter(Document doc, string parameterFilterName)
     {
         return new FilteredElementCollector(doc).OfClass(typeof(ParameterFilterElement))

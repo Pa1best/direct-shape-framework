@@ -76,7 +76,6 @@ internal static class GeometryUtils
             center, d, d, d);
     }
 
-    [CanBeNull]
     internal static Solid CreateSphere(XYZ center, double radius)
     {
         var profile = new List<Curve>();

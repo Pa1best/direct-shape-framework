@@ -54,7 +54,6 @@ public static class Highlight
     /// <param name="depth"></param>
     /// <param name="height"></param>
     /// <returns>DirectShape object</returns>
-    [UsedImplicitly]
     public static DirectShape RectangularPrism(Document doc, XYZ prismCenter, double width, double depth, double height)
     {
         var prism = GeometryUtils.CreateRectangularPrism(prismCenter, width, depth, height);
@@ -69,7 +68,6 @@ public static class Highlight
     /// <param name="center">Central point of Cube. Is also is a location point</param>
     /// <param name="edgeLength"></param>
     /// <returns>DirectShape object</returns>
-    [UsedImplicitly]
     public static DirectShape Cube(Document doc, XYZ center, double edgeLength)
     {
         var prism = GeometryUtils.CreateCube(center, edgeLength);
@@ -83,7 +81,6 @@ public static class Highlight
     /// <param name="center">Central point of Sphere. Is also is a location point</param>
     /// <param name="radius"></param>
     /// <returns>DirectShape object</returns>
-    [UsedImplicitly]
     public static DirectShape Sphere(Document doc, XYZ center, double radius)
     {
         var prism = GeometryUtils.CreateSphere(center, radius);
@@ -97,7 +94,6 @@ public static class Highlight
     /// <param name="element">Host element</param>
     /// <param name="face">Face of host element to highlight</param>
     /// <returns>DirectShape object</returns>
-    [UsedImplicitly]
     [Obsolete]
     public static DirectShape Face(Document doc, Element element, Face face)
     {
@@ -111,7 +107,6 @@ public static class Highlight
     /// <param name="doc">Revit Document you are working on</param>
     /// <param name="face">Face of host element to highlight</param>
     /// <returns>DirectShape object</returns>
-    [UsedImplicitly]
     public static DirectShape Face(Document doc, Face face)
     {
         var g = GeometryUtils.GetGeometryFromFace(face);
@@ -126,7 +121,6 @@ public static class Highlight
     /// <param name="width">represents width of generated geometry</param>
     /// <param name="height">represents height of generated geometry</param>
     /// <returns>DirectShape object</returns>
-    [UsedImplicitly]
     public static DirectShape Plane(Document doc, Plane plane, double width = 10, double height = 10)
     {
         var g = GeometryUtils.CreatePlaneSolid(plane, width, height, 0.1);
@@ -140,7 +134,6 @@ public static class Highlight
     /// <param name="vector">Vector to highlight</param>
     /// <param name="start">Start point of this vector</param>
     /// <returns>List of DirectShape objects</returns>
-    [UsedImplicitly]
     public static List<DirectShape> Vector(Document doc, XYZ vector, XYZ start)
     {
         var curve = Line.CreateBound(start, start + vector * 2);
@@ -185,7 +178,6 @@ public static class Highlight
     /// <param name="doc">Revit Document you are working on</param>
     /// <param name="element">Element to retrieve Bounding Box</param>
     /// <returns>DirectShape object</returns>
-    [UsedImplicitly]
     public static DirectShape BoundingBox(Document doc, Element element)
     {
         var bBox = element.get_BoundingBox(null);
@@ -198,7 +190,6 @@ public static class Highlight
     /// <param name="doc">Revit Document you are working on</param>
     /// <param name="bBox">BoundingBox to highlight</param>
     /// <returns>DirectShape object</returns>
-    [CanBeNull]
     public static DirectShape BoundingBox(Document doc, BoundingBoxXYZ bBox)
     {
         if (bBox == null)
@@ -215,7 +206,6 @@ public static class Highlight
     /// Removes all DirectShape elements and DSF default view from project
     /// </summary>
     /// <param name="doc">Revit Document you are working on</param>
-    [UsedImplicitly]
     public static void ClearAll(Document doc)
     {
         doc.Delete(new FilteredElementCollector(doc).OfClass(typeof(DirectShape)).ToElementIds());
@@ -236,7 +226,6 @@ public static class Highlight
     /// Creates a special 3D View with predefined filters to show all DirectShapes with some color
     /// </summary>
     /// <param name="uiDoc"></param>
-    [UsedImplicitly]
     public static void OnView3D(UIDocument uiDoc)
     {
         if (_defaultView is not { IsValidObject: true })
@@ -258,7 +247,6 @@ public static class Highlight
         uiDoc.ActiveView = _defaultView;
     }
 
-    [CanBeNull]
     private static string GenerateMark(Document doc)
     {
         var existingElements = new FilteredElementCollector(doc).OfClass(typeof(DirectShape)).ToElements();

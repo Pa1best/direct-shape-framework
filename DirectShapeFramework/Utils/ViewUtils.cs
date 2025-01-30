@@ -4,7 +4,6 @@ namespace DirectShapeFramework.Utils;
 
 internal class ViewUtils
 {
-    [CanBeNull]
     internal static View3D GetView3DByName(Document doc, string name)
     {
         using var collector = new FilteredElementCollector(doc);
@@ -15,7 +14,6 @@ internal class ViewUtils
         return view3d;
     }
 
-    [CanBeNull]
     internal static View3D GenerateDsfView(Document doc, string viewName)
     {
         var viewFamilyType3D = new FilteredElementCollector(doc)
